@@ -1,0 +1,15 @@
+01 alg BookingRezerv
+02 var
+03	string Message;
+04	string Requir;
+05 start
+06 input Requir;
+07 choose optimal option;
+08 book option;
+09 if option is "Îê"
+10	then Message = option.addres;
+11	else if option is not emerty
+12                 then  {choose other option; goto 08 }
+13		   else Message="Sit at home";
+14 output Message;
+15 end.
