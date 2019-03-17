@@ -1,0 +1,20 @@
+01 alg BookingRezerv2
+02 var
+03	string Message;
+04	string Requir;
+05	boolean Booked;
+06	obj [] options;
+07 start
+08 input Requir;
+09 find option;
+10 options = option.list;
+11 Booked=false;
+12 Message="Sit at home";
+13 while  (options it not empty) and (not Booked)
+14	try to book option[1];
+15	if option[1].booked is true
+16		then {Message=option[1].adress; Booked = true};
+17	remove option[1];
+18 repeat while;
+19 output Message;
+20 end.
