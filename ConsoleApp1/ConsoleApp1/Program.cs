@@ -12,7 +12,11 @@ namespace ConsoleApp1
         {
             EmptyArray();
             Console.ReadKey();
+
+            ArrayOF3();
+            Console.ReadKey();
         }
+
         static void EmptyArray()
         {
             int[] emptyArray = new int[0];
@@ -20,7 +24,7 @@ namespace ConsoleApp1
             Console.WriteLine(emptyArray.Length);
         }
 
-        void ArrayOF3()
+        static void ArrayOF3()
         {
             object[] objArray = { 32, 'A', "Hello" };
             foreach (object o in objArray)
@@ -32,6 +36,8 @@ namespace ConsoleApp1
             foreach (object o in objArray)
                 Console.WriteLine(o);
         }
+
+      //  void RandomArray()
     }
 
 }
