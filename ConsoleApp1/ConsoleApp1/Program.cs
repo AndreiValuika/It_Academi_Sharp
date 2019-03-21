@@ -20,8 +20,18 @@ namespace ConsoleApp1
             Console.WriteLine(emptyArray.Length);
         }
 
+        void ArrayOF3()
+        {
+            object[] objArray = { 32, 'A', "Hello" };
+            foreach (object o in objArray)
+                Console.WriteLine(o);
 
-       
+            objArray[0] = (int)objArray[0] + 10;
+            objArray[2] = (String)objArray[0] + ", guys!";
+
+            foreach (object o in objArray)
+                Console.WriteLine(o);
+        }
     }
 
 }
