@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5EB9C526-6526-483B-935E-35688D1FA1DF}</ProjectGuid>
+    <ProjectGuid>{42D9F8CA-9C33-4A28-92B8-453311655DCB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>hm_06</RootNamespace>
-    <AssemblyName>hm_06</AssemblyName>
+    <RootNamespace>hm_06_02</RootNamespace>
+    <AssemblyName>hm_06_02</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
