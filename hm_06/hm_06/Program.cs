@@ -18,7 +18,7 @@ namespace hm_06
 
             try
             {
-                StreamReader stReader = new StreamReader("Test.txt");// load string from file; 
+                StreamReader stReader = new StreamReader(@"..\..\Test.txt");// load string from file; 
                 myString = stReader.ReadLine();
 
                 String[] arrayString = myString.Split(';');  // separation string;
@@ -33,7 +33,7 @@ namespace hm_06
                 Console.WriteLine(myString);
                 Console.WriteLine();
 
-                Console.WriteLine("Result line:");
+                Console.WriteLine("Result:");
                 foreach (String st in arrayString) Console.WriteLine(st);
                 Console.WriteLine();
             }
