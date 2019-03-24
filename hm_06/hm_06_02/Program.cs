@@ -33,6 +33,7 @@ namespace hm_06_02
                 Console.WriteLine(myString);
                 Console.WriteLine();
 
+                
                 int menuItem = 0;
                 String tempString="";
                 while (menuItem != 5)
@@ -170,9 +171,19 @@ namespace hm_06_02
         }
         static void ThirdTask(String tempString)
         {
-            String[] arrayString = tempString.Split(' ');  // separation string;
+
+            int numLetters = 0;
+            int numPunct = 0;
+            foreach (Char ch in tempString)
+            {
+                if (Char.IsLetter(ch)) numLetters++;
+                if (Char.IsPunctuation(ch)) numPunct++;
+            }
+           
             Console.Clear();
             Console.WriteLine("Third task.");
+            Console.WriteLine($"Input string: {tempString}");
+            Console.WriteLine($"Number of letters - {numLetters} \nNumber of punctuations - {numPunct}");
 
             Console.WriteLine("Press any key to continue....");
             Console.ReadKey();
@@ -180,40 +191,10 @@ namespace hm_06_02
         }
         static void FoursTask(String tempString)
         {
-            int a, b, rez;
-            String[] arrayString = tempString.Split(' ');  // separation string;
+                       String[] arrayString = tempString.Split(' ');  // separation string;
             Console.Clear();
             Console.WriteLine("Fours task.");
 
-            Console.Write("Input first number:");
-            a = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Input second number:");
-            b = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Input arithmetic action + or - :");
-            string ch = Console.ReadLine();
-
-            if (ch == "+") rez = a + b;
-            else if (ch == "-") rez = a - b;
-            else
-            {
-                Console.WriteLine("Error! \nPress any key to repeat..");
-                Console.ReadKey();
-                return;
-            }
-
-
-            Console.Write("Input rezult:");
-            int inSum = Convert.ToInt32(Console.ReadLine());
-
-            if (inSum == rez) Console.WriteLine("Rigth!");
-            else
-            {
-                Console.WriteLine("Wrong!");
-                if (inSum > rez) Console.WriteLine("Must be less!");
-                else Console.WriteLine("Must be more!");
-            }
 
             Console.WriteLine("Press any key to continue....");
             Console.ReadKey();
