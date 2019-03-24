@@ -20,11 +20,12 @@ namespace hm_06
             {
                 StreamReader stReader = new StreamReader(@"..\..\Test.txt");// load string from file; 
                 myString = stReader.ReadLine();
+                stReader.Close();
 
                 String[] arrayString = myString.Split(';');  // separation string;
 
                 if (arrayString.Length == 1)                 // if line doesn't contain ";"
-                    throw new Exception("Wrong line!");      // generate exeption;
+                    throw new Exception("Wrong line!");      // generate exception;
 
                 for (int i = 0; i < arrayString.Length; i++) // replace letters;
                     arrayString[i]=arrayString[i].Replace('о', 'а'); 
