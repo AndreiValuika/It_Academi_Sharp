@@ -13,40 +13,37 @@ namespace hm_06_02
         {
             Console.Clear();
             Console.WriteLine("Test line loading from file \"Test.txt\"");
-
+            Console.WriteLine("Press any key....");
+            Console.ReadKey();
+            
             try
             {
                 StreamReader stReader = new StreamReader(@"..\..\Test.txt");// load string from file; 
                 String myString = stReader.ReadLine();
                 stReader.Close();
 
-                {
-                    int indexOfSpace = myString.IndexOf(' ');               // if line doesn't contain " "
-                    if (indexOfSpace == 0 || indexOfSpace == -1)            // or start with " "
-                        throw new Exception("Wrong line!");                 // generate exception;
-                }    //testing string;         
-                    
-
-
-
-                Console.WriteLine("Start line:");
-                Console.WriteLine(myString);
-                Console.WriteLine();
-
-                
                 int menuItem = 0;
-                String tempString="";
-                while (menuItem != 5)
+                while (menuItem != 6)
                 {
-                    
+                    {
+                        int indexOfSpace = myString.IndexOf(' ');               // if line doesn't contain " "
+                        if (indexOfSpace == 0 || indexOfSpace == -1)            // or start with " "
+                            throw new Exception("Wrong line!");                 // generate exception;
+                    }    //testing string;         
+
+                    Console.Clear();
+                    Console.WriteLine("Line : ");
+                    Console.WriteLine(myString);
+                    Console.WriteLine();
+
                     menuItem = MyMenu();
                     switch (menuItem)
                     {
                         case 1:
-                           tempString=FirstTask(myString);
+                            FirstTask(myString);
                             break;
                         case 2:
-                           tempString=SecondTask(myString);
+                            SecondTask(myString);
                             break;
                         case 3:
                             ThirdTask(myString);
@@ -55,6 +52,9 @@ namespace hm_06_02
                             FoursTask(myString);
                             break;
                         case 5:
+                            myString = ChangeString();
+                            break;
+                        case 6:
                             break;
                         default:
                             Console.WriteLine("Error! Press any key to repeat...");
@@ -62,41 +62,45 @@ namespace hm_06_02
                             break;
                     }
                 }
-                //Console.WriteLine("Result:");
-                //foreach (String st in arrayString) Console.WriteLine(st);
-                //Console.WriteLine();
-                Console.WriteLine(myString);
-                Console.WriteLine(tempString);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
-
-
-            
+            Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
         static int MyMenu()
         {
+            Console.WriteLine();
             Console.WriteLine("1 - First task.");
             Console.WriteLine("2 - Second task.");
             Console.WriteLine("3 - Third task.");
             Console.WriteLine("4 - Fours task.");
-            Console.WriteLine("5 - Exit.");
+            Console.WriteLine("5 - Change string.");
+            Console.WriteLine("6 - Exit.");
             try
             {
                 return Convert.ToInt32(Console.ReadLine());
             }
             catch
             {
-                return 6;
+                return 7;
             }
         }
-      
-
-        static String FirstTask(String tempString)
+        static String ChangeString()
         {
+            Console.WriteLine("Input new line: ");
+            string tempStr = Console.ReadLine();
+            return tempStr;
+        }
+
+        static void FirstTask(String tempString)
+        {
+            Console.Clear();
+            Console.WriteLine("First task:");
+            Console.WriteLine($"Line :\n{tempString}");
+
             String[] arrayString = tempString.Split(' ');  // separation string;
 
             int maxWord = 0;
@@ -110,16 +114,18 @@ namespace hm_06_02
                 if (st.Length == maxWord) continue;
                 resultString += st+" ";
             }
-
-            return resultString;
+            Console.WriteLine($"Result :\n{resultString} ");
+            Console.WriteLine("Press any key to continue....");
+            Console.ReadKey();
         }
-        static String SecondTask(String tempString)
+        static void SecondTask(String tempString)
         {
-           
-            String[] arrayString = tempString.Split(' ');  // separation string;
             Console.Clear();
             Console.WriteLine("Second task:");
+            Console.WriteLine($"Line :\n{tempString}");
 
+            String[] arrayString = tempString.Split(' ');  // separation string;
+            
             int maxWord, minWord;                          //set min and max length;
             minWord = maxWord = arrayString[0].Length;     
             foreach (String st in arrayString)
@@ -166,11 +172,16 @@ namespace hm_06_02
 
             String resultString = "";
             foreach (String st in arrayString) resultString+=st + " ";
-            return resultString;
+            Console.WriteLine($"Result :\n{resultString} ");
 
+            Console.WriteLine("Press any key to continue....");
+            Console.ReadKey();
         }
         static void ThirdTask(String tempString)
         {
+            Console.Clear();
+            Console.WriteLine("Third task.");
+            Console.WriteLine($"Line :\n{tempString}");
 
             int numLetters = 0;
             int numPunct = 0;
@@ -180,21 +191,35 @@ namespace hm_06_02
                 if (Char.IsPunctuation(ch)) numPunct++;
             }
            
-            Console.Clear();
-            Console.WriteLine("Third task.");
-            Console.WriteLine($"Input string: {tempString}");
             Console.WriteLine($"Number of letters - {numLetters} \nNumber of punctuations - {numPunct}");
-
             Console.WriteLine("Press any key to continue....");
             Console.ReadKey();
-
         }
         static void FoursTask(String tempString)
         {
-                       String[] arrayString = tempString.Split(' ');  // separation string;
             Console.Clear();
             Console.WriteLine("Fours task.");
+            Console.WriteLine($"Line :\n{tempString}");
 
+            String[] arrayString = tempString.Split(' ');  // separation string;
+
+            string tempStr;
+            for (int i = 0; i < arrayString.Length; i++)
+            {
+                for (int j = i + 1; j <arrayString.Length; j++)
+                {
+                    if (arrayString[i].Length > arrayString[j].Length)
+                    {
+                        tempStr = arrayString[i];
+                        arrayString[i] = arrayString[j];
+                        arrayString[j] = tempStr;
+                    }
+                }
+            }//sort array;
+
+            Console.WriteLine("Result :");
+            foreach (String st in arrayString)
+                Console.WriteLine(st);
 
             Console.WriteLine("Press any key to continue....");
             Console.ReadKey();
