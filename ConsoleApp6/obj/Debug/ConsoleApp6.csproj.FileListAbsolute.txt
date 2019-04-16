@@ -1,0 +1,7 @@
+D:\students\Valujko\it_academy_practice\ConsoleApp6\ConsoleApp6\bin\Debug\ConsoleApp6.exe.config
+D:\students\Valujko\it_academy_practice\ConsoleApp6\ConsoleApp6\bin\Debug\ConsoleApp6.exe
+D:\students\Valujko\it_academy_practice\ConsoleApp6\ConsoleApp6\bin\Debug\ConsoleApp6.pdb
+D:\students\Valujko\it_academy_practice\ConsoleApp6\ConsoleApp6\obj\Debug\ConsoleApp6.csprojAssemblyReference.cache
+D:\students\Valujko\it_academy_practice\ConsoleApp6\ConsoleApp6\obj\Debug\ConsoleApp6.csproj.CoreCompileInputs.cache
+D:\students\Valujko\it_academy_practice\ConsoleApp6\ConsoleApp6\obj\Debug\ConsoleApp6.exe
+D:\students\Valujko\it_academy_practice\ConsoleApp6\ConsoleApp6\obj\Debug\ConsoleApp6.pdb
