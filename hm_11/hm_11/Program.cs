@@ -23,32 +23,25 @@ namespace hm_11
             {
                 testArray.CreateMotorcycle(new Motorcycle(i, "Name" + i, "Model" + i, i * 100, i * 10));
             }
-
-            List<Motorcycle> motorcycles = testArray.GetMotorcycles();
-            
-            foreach (var moto in motorcycles)
-            {
-                Console.WriteLine(moto);
-            }
-            Console.ReadKey();
+            ShowMotorcycle(testArray);
 
             testArray.DeleteMotorcycle(new Motorcycle(1, "Name1", "Model1", 100, 10));
 
-            motorcycles = testArray.GetMotorcycles();
+            ShowMotorcycle(testArray);
 
-            foreach (var moto in motorcycles)
-            {
-                Console.WriteLine(moto);
-            }
-            Console.ReadKey();
             testArray.CreateMotorcycle(new Motorcycle(11, "Name11", "Model11", 2,8));
-            motorcycles = testArray.GetMotorcycles();
+
+            ShowMotorcycle(testArray);
+        }
+
+        static void ShowMotorcycle(IRepository testArray)
+        {
+            List<Motorcycle> motorcycles = testArray.GetMotorcycles();
 
             foreach (var moto in motorcycles)
             {
                 Console.WriteLine(moto);
             }
-
             Console.ReadKey();
         }
     }
