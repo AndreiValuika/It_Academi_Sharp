@@ -10,7 +10,7 @@ namespace DAL
     {
         void CreateMotorcycle(Motorcycle motorcycle);
         List<Motorcycle> GetMotorcycles();
-        Motorcycle GetMotorcycleByID(Guid id);
+        Motorcycle GetMotorcycleByID(int id);
         void UpdateMotorcycle(Motorcycle motorcycle);
         void DeleteMotorcycle(Motorcycle motorcycle);
 

@@ -27,7 +27,7 @@ namespace DAL
             Moto.Motorcycles.SetValue(null, GetMotorcycleIndex(motorcycle));
         }
 
-        public Motorcycle GetMotorcycleByID(Guid id)
+        public Motorcycle GetMotorcycleByID(int id)
         {
             foreach (var moto in Moto.Motorcycles)
             {
