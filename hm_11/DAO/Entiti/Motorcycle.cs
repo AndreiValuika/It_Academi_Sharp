@@ -4,14 +4,14 @@ namespace DAO.Entiti
 {
     public class Motorcycle
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Model { get; set; }
 
         public int Year { get; set; }
         public int Odometr { get; set; }
 
-        public Motorcycle(Guid id, string name, string model, int year, int odometr)
+        public Motorcycle(int id, string name, string model, int year, int odometr)
         {
             Id = id;
             Name = name;

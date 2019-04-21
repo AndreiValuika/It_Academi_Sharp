@@ -19,7 +19,7 @@ namespace DAL
         {
             if (FindFirstEmptyIndex() < 0)
                 throw new Exception("Array is Full!!!");
-            Moto.Motorcycles.SetValue(motorcycle, Moto.CorrentIndex++);
+            Moto.Motorcycles.SetValue(motorcycle, FindFirstEmptyIndex());
         }
 
         public void DeleteMotorcycle(Motorcycle motorcycle)
@@ -67,7 +67,7 @@ namespace DAL
         private int FindFirstEmptyIndex()
         {
             int i = 0;
-            while ((Moto.Motorcycles.GetValue(i++) != null) && (i != Moto.Motorcycles.Length)) { }
+            while ((Moto.Motorcycles.GetValue(i) != null) && (i != Moto.Motorcycles.Length)) { i++; }
             return i != Moto.Motorcycles.Length ? i : -1;
         }
     }
