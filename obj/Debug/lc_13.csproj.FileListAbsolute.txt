@@ -1,0 +1,7 @@
+D:\students\Valujko\it_academy_practice\lc_13\lc_13\bin\Debug\lc_13.exe.config
+D:\students\Valujko\it_academy_practice\lc_13\lc_13\bin\Debug\lc_13.exe
+D:\students\Valujko\it_academy_practice\lc_13\lc_13\bin\Debug\lc_13.pdb
+D:\students\Valujko\it_academy_practice\lc_13\lc_13\obj\Debug\lc_13.csprojAssemblyReference.cache
+D:\students\Valujko\it_academy_practice\lc_13\lc_13\obj\Debug\lc_13.csproj.CoreCompileInputs.cache
+D:\students\Valujko\it_academy_practice\lc_13\lc_13\obj\Debug\lc_13.exe
+D:\students\Valujko\it_academy_practice\lc_13\lc_13\obj\Debug\lc_13.pdb
