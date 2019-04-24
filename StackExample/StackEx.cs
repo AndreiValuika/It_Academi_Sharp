@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +7,23 @@ using System.Threading.Tasks;
 
 namespace StackExample
 {
-    class StackEx
+    class StackEx: IEnumerable
     {
         Node top;
-        public Object pop()
+
+       
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            Node current = top;
+            while (current != null)
+            {
+                yield return current.Body;
+                current = current.Next;
+            }
+        }
+
+        public Object Pop()
         {
             if (top!=null)
             {
@@ -21,7 +35,15 @@ namespace StackExample
             throw new Exception("Stack is empty.");
         }
 
-        public void push(Object body)
+        public Object Peek()
+        {
+            if (top==null)
+            {
+                throw new Exception("Stack is empty.");
+            }
+            return top.Body;
+        }
+        public void Push(Object body)
         {
             if (top==null)
             {

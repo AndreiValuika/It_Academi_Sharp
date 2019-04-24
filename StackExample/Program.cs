@@ -11,15 +11,30 @@ namespace StackExample
         static void Main(string[] args)
         {
             StackEx stackEx = new StackEx();
-            stackEx.push(1);
-            stackEx.push("Intel");
-            stackEx.push(true);
+            stackEx.Push(1);
+            stackEx.Push("Intel");
+            stackEx.Push(true);
 
-            Console.WriteLine(stackEx.pop());
-            Console.WriteLine(stackEx.pop());
-            Console.WriteLine(stackEx.pop());
+            Console.WriteLine("----------------");
+            Console.WriteLine("Use foreach:");
+            foreach (var item in stackEx)
+            {
+                Console.WriteLine(item.ToString()); 
+            }
 
-            Console.ReadKey();
+            Console.WriteLine("----------------");
+            Console.WriteLine("Use stack.Peek");
+            Console.WriteLine(stackEx.Peek());
+            Console.WriteLine(stackEx.Peek());
+            Console.WriteLine(stackEx.Peek());
+
+            Console.WriteLine("----------------");
+            Console.WriteLine("Use stack.Pop:");
+            Console.WriteLine(stackEx.Pop());
+            Console.WriteLine(stackEx.Pop());
+            Console.WriteLine(stackEx.Pop());
+
+            Console.Read();
 
         }
     }
