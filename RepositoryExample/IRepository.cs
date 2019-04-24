@@ -10,7 +10,7 @@ namespace RepositoryExample
     {
         void CreateMotorcycle(Motorcycle motorcycle);
         IList<Motorcycle> GetMotorcycles();
-        Motorcycle GetMotorcycleByID(int id);
+        Motorcycle GetMotorcycleByID(Guid id);
         void UpdateMotorcycle(Motorcycle motorcycle);
         void DeleteMotorcycle(Motorcycle motorcycle);
     }

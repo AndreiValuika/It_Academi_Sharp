@@ -8,20 +8,24 @@ namespace RepositoryExample
 {
     public class Motorcycle
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Model { get; set; }
 
         public int Year { get; set; }
         public int Odometr { get; set; }
 
-        public Motorcycle(int id, string name, string model, int year, int odometr)
+        public Motorcycle(Guid id, string name, string model, int year, int odometr)
         {
             Id = id;
             Name = name;
             Model = model;
             Year = year;
             Odometr = odometr;
+        }
+
+        public Motorcycle()
+        {
         }
 
         public override bool Equals(object obj)
@@ -36,7 +40,7 @@ namespace RepositoryExample
 
         public override string ToString()
         {
-            return $"Id = {Id}, Name = {Name}";
+            return $"Id = {Id}. Name = {Name}. Model = {Model}. Year = {Year}. Odometr = {Odometr}";
         }
     }
 }
