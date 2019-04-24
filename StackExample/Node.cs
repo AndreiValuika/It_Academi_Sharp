@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace StackExample
 {
-    class Node
+    class Node<T>
     {
-        public Object Body { get; set; }
-        public Node Next { get; set; }
+        public T Body { get; set; }
+        public Node<T> Next { get; set; }
     }
 }

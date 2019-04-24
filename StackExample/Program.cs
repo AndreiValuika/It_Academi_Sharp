@@ -10,10 +10,10 @@ namespace StackExample
     {
         static void Main(string[] args)
         {
-            StackEx stackEx = new StackEx();
+            StackEx<int> stackEx = new StackEx<int>();
             stackEx.Push(1);
-            stackEx.Push("Intel");
-            stackEx.Push(true);
+            stackEx.Push(2);
+            stackEx.Push(3);
 
             Console.WriteLine("----------------");
             Console.WriteLine("Use foreach:");

@@ -7,27 +7,27 @@ using System.Threading.Tasks;
 
 namespace StackExample
 {
-    class StackEx: IEnumerable
+    class StackEx<T>: IEnumerable<T>
     {
-        Node top;
-
-       
-
+        Node<T> top;
         IEnumerator IEnumerable.GetEnumerator()
         {
-            Node current = top;
+            return ((IEnumerable)this).GetEnumerator();
+        }
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        {
+            Node<T> current = top;
             while (current != null)
             {
                 yield return current.Body;
                 current = current.Next;
             }
         }
-
-        public Object Pop()
+        public T Pop()
         {
             if (top!=null)
             {
-                Object result = top.Body;
+                T result = top.Body;
                 top = top.Next;
                 return result;
             }
@@ -35,7 +35,7 @@ namespace StackExample
             throw new Exception("Stack is empty.");
         }
 
-        public Object Peek()
+        public T Peek()
         {
             if (top==null)
             {
@@ -43,17 +43,17 @@ namespace StackExample
             }
             return top.Body;
         }
-        public void Push(Object body)
+        public void Push(T body)
         {
             if (top==null)
             {
-                top = new Node();
+                top = new Node<T>();
                 top.Body = body;
                 top.Next = null;
             }
             else
             {
-                Node tempNode = new Node();
+                Node<T> tempNode = new Node<T>();
                 tempNode.Body = body;
                 tempNode.Next = top;
                 top = tempNode;
