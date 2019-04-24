@@ -17,6 +17,7 @@ namespace RepositoryExample
 
         public void CreateMotorcycle(Motorcycle motorcycle)
         {
+            
             if (FindFirstEmptyIndex() < 0)
                 throw new Exception("Array is Full!!!");
             Moto.Motorcycles.SetValue(motorcycle, FindFirstEmptyIndex());
@@ -24,8 +25,15 @@ namespace RepositoryExample
         public void DeleteMotorcycle(Motorcycle motorcycle)
         {
             if (GetMotorcycleIndex(motorcycle) >= 0)
+            {
                 Moto.Motorcycles.SetValue(null, GetMotorcycleIndex(motorcycle));
-            else Console.WriteLine("Error! Motorcycle was not found.");
+                Logger.Log.Info("Motorcycle was deleted");
+            }
+            else
+            {
+                Console.WriteLine("Error! Motorcycle was not found.");
+                Logger.Log.Info("Motorcycle was not found");
+            }
         }
         public Motorcycle GetMotorcycleByID(Guid id)
         {
@@ -38,7 +46,7 @@ namespace RepositoryExample
         }
         public IList<Motorcycle> GetMotorcycles()
         {
-            List<Motorcycle> result = new List<Motorcycle>();
+            IList<Motorcycle> result = new List<Motorcycle>();
             foreach (var moto in Moto.Motorcycles)
             {
                 result.Add(moto);
@@ -47,7 +55,9 @@ namespace RepositoryExample
         }
         public void UpdateMotorcycle(Motorcycle motorcycle)
         {
-            throw new NotImplementedException();
+            Motorcycle tempMoto = GetMotorcycleByID(motorcycle.Id);
+            DeleteMotorcycle(tempMoto);
+            CreateMotorcycle(motorcycle);
         }
         private int GetMotorcycleIndex(Motorcycle motorcycle)
         {

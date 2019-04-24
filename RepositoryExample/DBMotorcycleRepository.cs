@@ -100,6 +100,18 @@ namespace RepositoryExample
         }
         public void UpdateMotorcycle(Motorcycle motorcycle)
         {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string sqlExpression = $"UPDATE Planets SET Name = '{motorcycle.Name}' " +
+                                                         $" Model ='{motorcycle.Model}' " +
+                                                         $" Year = '{motorcycle.Year}' " +
+                                                         $" Odometr = '{motorcycle.Odometr}' " +
+                                                         $" WHERE Id = '{motorcycle.Id.ToString()}'";
+                SqlCommand command = new SqlCommand(sqlExpression, connection);
+                
+            }
+
             throw new NotImplementedException();
         }
     }
