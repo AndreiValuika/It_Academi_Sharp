@@ -100,6 +100,7 @@ namespace RepositoryExample
         }
         public void UpdateMotorcycle(Motorcycle motorcycle)
         {
+            Logger.Log.Info("Start update");
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -112,7 +113,7 @@ namespace RepositoryExample
                 
             }
 
-            throw new NotImplementedException();
+            Logger.Log.Info("End update"); ;
         }
     }
 }
