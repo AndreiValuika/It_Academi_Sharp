@@ -9,14 +9,14 @@ namespace StackExample
 {
     class StackEx<T>: IEnumerable<T>
     {
-        Node<T> top;
+        public Node<T> Top { get; private set; }
         IEnumerator IEnumerable.GetEnumerator()
         {
             return ((IEnumerable)this).GetEnumerator();
         }
         IEnumerator<T> IEnumerable<T>.GetEnumerator()
         {
-            Node<T> current = top;
+            Node<T> current = Top;
             while (current != null)
             {
                 yield return current.Body;
@@ -25,38 +25,36 @@ namespace StackExample
         }
         public T Pop()
         {
-            if (top!=null)
+            if (Top!=null)
             {
-                T result = top.Body;
-                top = top.Next;
+                T result = Top.Body;
+                Top = Top.Next;
                 return result;
             }
-           
             throw new Exception("Stack is empty.");
         }
-
         public T Peek()
         {
-            if (top==null)
+            if (Top==null)
             {
                 throw new Exception("Stack is empty.");
             }
-            return top.Body;
+            return Top.Body;
         }
         public void Push(T body)
         {
-            if (top==null)
+            if (Top==null)
             {
-                top = new Node<T>();
-                top.Body = body;
-                top.Next = null;
+                Top = new Node<T>();
+                Top.Body = body;
+                Top.Next = null;
             }
             else
             {
                 Node<T> tempNode = new Node<T>();
                 tempNode.Body = body;
-                tempNode.Next = top;
-                top = tempNode;
+                tempNode.Next = Top;
+                Top = tempNode;
             }
         }
     }

@@ -19,7 +19,16 @@ namespace StackExample
             Console.WriteLine("Use foreach:");
             foreach (var item in stackEx)
             {
-                Console.WriteLine(item.ToString()); 
+                Console.WriteLine(item + " Type = " + item.GetType().Name); 
+            }
+
+            StackEx<String> stringStack = stackEx.IntToString();
+
+            Console.WriteLine("----------------");
+            Console.WriteLine("Use foreach:");
+            foreach (var item in stringStack)
+            {
+                Console.WriteLine(item + " Type = " + item.GetType().Name);
             }
 
             Console.WriteLine("----------------");
@@ -28,11 +37,14 @@ namespace StackExample
             Console.WriteLine(stackEx.Peek());
             Console.WriteLine(stackEx.Peek());
 
+            
             Console.WriteLine("----------------");
             Console.WriteLine("Use stack.Pop:");
             Console.WriteLine(stackEx.Pop());
             Console.WriteLine(stackEx.Pop());
             Console.WriteLine(stackEx.Pop());
+
+            
 
             Console.Read();
 
