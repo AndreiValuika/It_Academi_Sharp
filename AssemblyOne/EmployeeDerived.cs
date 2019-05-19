@@ -8,7 +8,7 @@ namespace AssemblyOne
 {
     public class EmployeeDerived : Employee
     {
-        public void showAll()
+        public void ShowAll()
         {
             Console.WriteLine("Visible const in derived class:");
             Console.WriteLine(CompanyNameInternal + CompanyNamePrivateProtected + CompanyNameProtected

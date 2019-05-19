@@ -16,7 +16,7 @@ namespace AssemblyOne
         protected internal const string CompanyNameProtectedInternal = "ProtectedInternal -- ";
         private protected const string CompanyNamePrivateProtected = "PrivateProtected -- ";
 
-        public void showAll()
+        public void ShowAll()
         {
 
             Console.WriteLine("Visible const in class:");

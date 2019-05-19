@@ -11,10 +11,10 @@ namespace AssemblyOne
         static void Main(string[] args)
         {
             Employee employee = new Employee();
-            employee.showAll();
+            employee.ShowAll();
             Console.WriteLine();
             EmployeeDerived employeeDerived = new EmployeeDerived();
-            employeeDerived.showAll();
+            employeeDerived.ShowAll();
             Console.WriteLine();
             Console.WriteLine("Visible const in project:");
             Console.WriteLine(Employee.CompanyNameInternal+Employee.CompanyNameProtectedInternal+Employee.CompanyNamePublic);

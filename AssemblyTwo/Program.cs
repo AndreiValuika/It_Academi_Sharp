@@ -11,11 +11,17 @@ namespace AssemblyTwo
     {
         static void Main(string[] args)
         {
+           
+            Employee employee = new EmployeeDerived();
+            employee.ShowAll();
             EmployeeDerived employeeDerived = new EmployeeDerived();
-            employeeDerived.showAll();
-
-            //employeeDerived.
+            employeeDerived.ShowAll();
+            DerivedClassTwo derivedClassTwo = new DerivedClassTwo();
+            derivedClassTwo.ShowAll();
+            Console.WriteLine("Visible const in other project:");
+            Console.WriteLine(Employee.CompanyNamePublic );
             Console.Read();
+
         }
     }
 }
